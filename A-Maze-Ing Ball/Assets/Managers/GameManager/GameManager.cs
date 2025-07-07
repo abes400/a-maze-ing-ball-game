@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int collectedStars = 0;
+    int timeElapsed = 0;
 
-    // Update is called once per frame
+    public static Action<int> UpdateStars;
+
+    void Start() => Ball.OnStarCollected += OnStarCollected;
+
     void Update()
     {
-        
+        //TODO: Handle pause (maybe)
     }
+
+    void OnStarCollected(int incrementSize)
+    {
+        collectedStars += incrementSize;
+        UpdateStars?.Invoke(collectedStars);
+    }
+
 }
