@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameState : MonoBehaviour
 {
-    public TextMeshProUGUI starCount;
-    // Start is called before the first frame update
+    [SerializeField] Sprite[]        starSprites;
+    private          Image           starSpriteImage;
+
+    public TextMeshProUGUI time;
+    float  timeElapsed = 0;
+
     void Start()
     {
+        starSpriteImage = GetComponent<Image>();
         GameManager.UpdateStars += UpdateStars;
-        starCount.text = "0";
     }
 
-    void UpdateStars(int value)
+    private void Update()
     {
-        starCount.text = value.ToString();
+        // Update timer
+        timeElapsed += Time.deltaTime;
+        int min = Mathf.FloorToInt(timeElapsed / 60);
+        int sec = Mathf.FloorToInt(timeElapsed % 60);
+        time.text = string.Format("{0:00}:{1:00}", min, sec);
     }
+
+    void UpdateStars(int value) => starSpriteImage.sprite = starSprites[value];
 }

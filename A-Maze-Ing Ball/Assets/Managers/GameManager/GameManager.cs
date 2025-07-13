@@ -6,7 +6,6 @@ using System;
 public class GameManager : MonoBehaviour
 {
     int collectedStars = 0;
-    int timeElapsed = 0;
 
     public static Action<int> UpdateStars;
 
@@ -14,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         //TODO: Handle pause (maybe)
     }
 
