@@ -5,11 +5,15 @@ using System;
 
 public class Teleport : MonoBehaviour
 {
-    protected bool canTeleport = true;
-    protected bool canHandle   = true;
 
     [SerializeField] short channel;
-    [SerializeField] bool  locked = false;
+    [SerializeField] bool locked = false;
+
+    public Sprite LockSprite, UnlockSprite;
+    private SpriteRenderer spriteRenderer;
+
+    protected bool canTeleport = true;
+    protected bool canHandle   = true;
 
     public static event Action<Teleport, GameObject, short> OnTeleport;
 
@@ -19,6 +23,8 @@ public class Teleport : MonoBehaviour
     {
         OnTeleport += HandleTeleport;
         Key.OnUnlock += HandleUnlock;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = locked ? LockSprite : UnlockSprite;
     }
 
     private void HandleTeleport(Teleport caller, GameObject ball, short channel)
@@ -34,7 +40,11 @@ public class Teleport : MonoBehaviour
 
     private void HandleUnlock(short channel)
     {
-        
+        if(channel == this.channel)
+        {
+            locked = false;
+            spriteRenderer.sprite = UnlockSprite;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
