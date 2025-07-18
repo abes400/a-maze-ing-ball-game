@@ -7,15 +7,19 @@ public class Teleport : MonoBehaviour
 {
     protected bool canTeleport = true;
     protected bool canHandle   = true;
-              bool locked      = false;
 
-    [SerializeField]
-    short channel;
+    [SerializeField] short channel;
+    [SerializeField] bool  locked = false;
 
-    Teleport caller;
     public static event Action<Teleport, GameObject, short> OnTeleport;
 
-    private void Start() => OnTeleport += HandleTeleport;
+    Teleport caller;
+
+    private void Start()
+    {
+        OnTeleport += HandleTeleport;
+        Key.OnUnlock += HandleUnlock;
+    }
 
     private void HandleTeleport(Teleport caller, GameObject ball, short channel)
     {
@@ -28,9 +32,14 @@ public class Teleport : MonoBehaviour
         }
     }
 
+    private void HandleUnlock(short channel)
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Ball") && canTeleport)
+        if(collision.CompareTag("Ball") && canTeleport && !locked)
         {
             canHandle = false;
             OnTeleport(this, collision.gameObject, channel);

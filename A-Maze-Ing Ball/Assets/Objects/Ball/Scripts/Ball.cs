@@ -15,7 +15,11 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             OnStarCollected(1);
+        } else if (collision.CompareTag("Key"))
+        {
+            collision.gameObject.GetComponent<Key>().Collect();
         }
-            
+
+
     }
 }

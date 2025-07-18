@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class Key : MonoBehaviour
+{
+    public static event Action<short> OnUnlock;
+    [SerializeField] short channel;
+
+    public void Collect()
+    {
+        OnUnlock(channel);
+        gameObject.SetActive(false);
+    }
+}
