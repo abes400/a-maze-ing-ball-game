@@ -5,15 +5,17 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     
-    [SerializeField] float rotationAngle   = 30.0f;
+    [SerializeField]
+    float rotationAngle = 30.0f;
 
-    [SerializeField] float rotationTime    = 00.2f;
+    [SerializeField]
+    float rotationTime = 00.2f;
 
-                     float currentVelocity = 00.0f;
-                     float targetAngle     = 00.0f;
+    float currentVelocity = 00.0f;
+    float targetAngle     = 00.0f;
                      
 
-    void Update()
+    private void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))

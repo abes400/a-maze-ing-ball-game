@@ -6,13 +6,15 @@ using TMPro;
 
 public class GameState : MonoBehaviour
 {
-    [SerializeField] Sprite[]        starSprites;
-    private          Image           starSpriteImage;
+    [SerializeField]
+    Sprite[] starSprites;
+
+    private Image starSpriteImage;
 
     public TextMeshProUGUI time;
     float  timeElapsed = 0;
 
-    void Start()
+    private void Start()
     {
         starSpriteImage = GetComponent<Image>();
         GameManager.UpdateStars += UpdateStars;

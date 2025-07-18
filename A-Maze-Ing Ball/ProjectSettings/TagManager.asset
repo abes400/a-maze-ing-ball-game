@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Star
+  - Ball
+  - Teleport
+  - Killer
+  - Key
+  - Fin
   layers:
   - Default
   - TransparentFX
