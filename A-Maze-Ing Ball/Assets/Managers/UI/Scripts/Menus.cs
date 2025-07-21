@@ -39,4 +39,10 @@ public class Menus : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Quit(bool saveData = false)
+    {
+        if (saveData) Debug.Log("TODO: Save Data");
+        SceneManager.LoadScene("MainMenu");
+    }
 }
