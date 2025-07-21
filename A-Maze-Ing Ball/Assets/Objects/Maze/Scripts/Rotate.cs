@@ -17,14 +17,15 @@ public class Rotate : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.isPlaying)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+                targetAngle += rotationAngle;
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+                targetAngle -= rotationAngle;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            targetAngle += rotationAngle;
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-            targetAngle -= rotationAngle;
-
-        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, rotationTime);
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-        
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, rotationTime);
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }  
     }
 }

@@ -21,10 +21,20 @@ public class Teleport : MonoBehaviour
 
     private void Start()
     {
-        OnTeleport += HandleTeleport;
-        Key.OnUnlock += HandleUnlock;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = locked ? LockSprite : UnlockSprite;
+    }
+
+    private void OnEnable()
+    {
+        OnTeleport += HandleTeleport;
+        Key.OnUnlock += HandleUnlock;
+    }
+
+    private void OnDisable()
+    {
+        OnTeleport -= HandleTeleport;
+        Key.OnUnlock -= HandleUnlock;
     }
 
     private void HandleTeleport(Teleport caller, GameObject ball, short channel)
@@ -52,7 +62,7 @@ public class Teleport : MonoBehaviour
         if(collision.CompareTag("Ball") && canTeleport && !locked)
         {
             canHandle = false;
-            OnTeleport(this, collision.gameObject, channel);
+            OnTeleport?.Invoke(this, collision.gameObject, channel);
         }
     }
 

@@ -5,22 +5,53 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    int collectedStars = 0;
+    public static bool isPlaying = true, finished = false;
+    static int collectedStars = 0;
 
     public static Action<int> UpdateStars;
+    public static Action<int, string> Finish;
+    public static Action TogglePause;
 
-    void Start() => Ball.OnStarCollected += OnStarCollected;
+    private void Start()
+    {
+        Time.timeScale = 1;
+        isPlaying = true;
+        finished = false;
+    }
 
     void Update()
     {
-
-        //TODO: Handle pause (maybe)
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPlaying) PauseLevel(); else Unpause();
+        }
     }
 
-    void OnStarCollected(int incrementSize)
+    public static void OnStarCollected(int incrementSize)
     {
         collectedStars += incrementSize;
         UpdateStars?.Invoke(collectedStars);
     }
 
+    public static void PauseLevel()
+    {
+        isPlaying = false;
+        Time.timeScale = 0;
+        TogglePause?.Invoke();
+    }
+
+    public static void Unpause()
+    {
+        isPlaying = true;
+        Time.timeScale = 1;
+        TogglePause?.Invoke();
+    }
+
+    public static void FinishLevel()
+    {
+        isPlaying = false;
+        finished = true;
+        Finish?.Invoke(collectedStars, GameState.GetTimeCode());
+        Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
+    }
 }

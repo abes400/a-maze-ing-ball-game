@@ -10,7 +10,7 @@ public class Key : MonoBehaviour
 
     public void Collect()
     {
-        OnUnlock(channel);
+        OnUnlock?.Invoke(channel);
         gameObject.SetActive(false);
     }
 }
