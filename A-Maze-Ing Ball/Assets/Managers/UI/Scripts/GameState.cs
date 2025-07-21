@@ -12,9 +12,14 @@ public class GameState : MonoBehaviour
     private Image starSpriteImage;
 
     public TextMeshProUGUI time;
-    public static float  timeElapsed = 0;
+    public static float  timeElapsed;
 
-    private void Start() => starSpriteImage = GetComponent<Image>();
+    private void Start()
+    {
+        timeElapsed = 0;
+        starSpriteImage = GetComponent<Image>();
+    }
+
     private void OnEnable() => GameManager.UpdateStars += UpdateStars;
     private void OnDisable() => GameManager.UpdateStars -= UpdateStars;
 

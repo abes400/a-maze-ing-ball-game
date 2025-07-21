@@ -5,8 +5,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool isPlaying = true, finished = false;
-    static int collectedStars = 0;
+    public static bool isPlaying, finished;
+    static int collectedStars;
 
     public static Action<int> UpdateStars;
     public static Action<int, string> Finish;
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         isPlaying = true;
         finished = false;
+        collectedStars = 0;
     }
 
     void Update()
