@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu, finishMenu;
+    [SerializeField] GameObject pauseMenu, finishMenu, banner;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -17,9 +17,17 @@ public class Menus : MonoBehaviour
         GameManager.Finish -= OnFinishLevel;
     }
 
-    void OnGamePause() => pauseMenu.SetActive(!GameManager.isPlaying);
+    void OnGamePause()
+    {
+        banner.SetActive(!GameManager.isPlaying);
+        pauseMenu.SetActive(!GameManager.isPlaying);
+    }
 
-    public void OnFinishLevel() => finishMenu.SetActive(true);
+    public void OnFinishLevel()
+    {
+        banner.SetActive(true);
+        finishMenu.SetActive(true);
+    }
 
     public void Continue() => GameManager.Unpause();
 
