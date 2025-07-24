@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class GameManager : MonoBehaviour
 {
     public static bool isPlaying, finished;
-    static int collectedStars;
+    public static int collectedStars;
 
     public static Action<int> UpdateStars;
-    public static Action<int, string> Finish;
+    public static Action Finish;
     public static Action TogglePause;
 
     private void Start()
@@ -22,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !finished)
         {
             if (isPlaying) PauseLevel(); else Unpause();
         }
@@ -50,9 +48,10 @@ public class GameManager : MonoBehaviour
 
     public static void FinishLevel()
     {
+        // save game
         isPlaying = false;
         finished = true;
-        Finish?.Invoke(collectedStars, GameState.GetTimeCode());
+        Finish?.Invoke();
         Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
     }
 }

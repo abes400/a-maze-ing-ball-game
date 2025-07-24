@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,7 +10,7 @@ public class GameState : MonoBehaviour
     private Image starSpriteImage;
 
     public TextMeshProUGUI time;
-    public static float  timeElapsed;
+    public static float timeElapsed;
 
     private void Start()
     {
@@ -26,8 +24,11 @@ public class GameState : MonoBehaviour
     private void Update()
     {
         // Update timer
-        timeElapsed += Time.deltaTime;
-        time.text = GetTimeCode();
+        if (!GameManager.finished)
+        {
+            timeElapsed += Time.deltaTime;
+            time.text = GetTimeCode();
+        }
     }
 
     void UpdateStars(int value) => starSpriteImage.sprite = starSprites[value];

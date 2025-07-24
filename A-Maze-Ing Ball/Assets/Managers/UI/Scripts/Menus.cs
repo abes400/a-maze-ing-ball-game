@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,30 +17,15 @@ public class Menus : MonoBehaviour
         GameManager.Finish -= OnFinishLevel;
     }
 
-    void OnGamePause()
-    {
-        pauseMenu.SetActive(!GameManager.isPlaying);
-    }
+    void OnGamePause() => pauseMenu.SetActive(!GameManager.isPlaying);
 
-    public void OnFinishLevel(int stars, string timeCode)
-    {
-        //
-    }
+    public void OnFinishLevel() => finishMenu.SetActive(true);
 
-    public void Continue()
-    {
-        pauseMenu.SetActive(false);
-        GameManager.Unpause();
-    }
+    public void Continue() => GameManager.Unpause();
 
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-    public void Quit(bool saveData = false)
-    {
-        if (saveData) Debug.Log("TODO: Save Data");
-        SceneManager.LoadScene("MainMenu");
-    }
+    public void Quit() => SceneManager.LoadScene("MainMenu");
+
+    public void Next() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Change to 1 on deploy
 }

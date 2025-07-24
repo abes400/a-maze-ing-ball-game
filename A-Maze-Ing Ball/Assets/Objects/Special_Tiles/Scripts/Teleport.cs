@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -13,7 +11,7 @@ public class Teleport : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     protected bool canTeleport = true;
-    protected bool canHandle   = true;
+    protected bool canHandle = true;
 
     public static event Action<Teleport, GameObject, short> OnTeleport;
 
@@ -39,18 +37,18 @@ public class Teleport : MonoBehaviour
 
     private void HandleTeleport(Teleport caller, GameObject ball, short channel)
     {
-        if(canHandle && channel == this.channel)
+        if (canHandle && channel == this.channel)
         {
             this.caller = caller;
             canTeleport = false;
             ball.transform.position = transform.position;
-            
+
         }
     }
 
     private void HandleUnlock(short channel)
     {
-        if(channel == this.channel)
+        if (channel == this.channel)
         {
             locked = false;
             spriteRenderer.sprite = UnlockSprite;
@@ -59,7 +57,7 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Ball") && canTeleport && !locked)
+        if (collision.CompareTag("Ball") && canTeleport && !locked)
         {
             canHandle = false;
             OnTeleport?.Invoke(this, collision.gameObject, channel);
@@ -69,6 +67,6 @@ public class Teleport : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         canTeleport = true;
-        if(caller != null) caller.canHandle = true;
+        if (caller != null) caller.canHandle = true;
     }
 }
