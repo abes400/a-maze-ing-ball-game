@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
 
     public void Collect()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.KEY);
         OnUnlock?.Invoke(channel);
         gameObject.SetActive(false);
     }

@@ -21,9 +21,15 @@ public class Rotate : MonoBehaviour
         if (GameManager.isPlaying)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                AudioManager.PlaySound?.Invoke(AudioManager.ROTATE);
                 targetAngle += rotationAngle;
+            }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                AudioManager.PlaySound?.Invoke(AudioManager.ROTATE);
                 targetAngle -= rotationAngle;
+            }
         }
 
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, rotationTime);

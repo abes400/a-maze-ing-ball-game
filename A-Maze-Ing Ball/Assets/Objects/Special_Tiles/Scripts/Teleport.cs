@@ -42,6 +42,7 @@ public class Teleport : MonoBehaviour
             this.caller = caller;
             canTeleport = false;
             ball.transform.position = transform.position;
+            AudioManager.PlaySound?.Invoke(AudioManager.TELEPORT);
 
         }
     }

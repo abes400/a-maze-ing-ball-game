@@ -29,6 +29,8 @@ public class Menus : MonoBehaviour
         finishMenu.SetActive(true);
     }
 
+    public void Sound() => AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+
     public void Continue() => GameManager.Unpause();
 
     public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

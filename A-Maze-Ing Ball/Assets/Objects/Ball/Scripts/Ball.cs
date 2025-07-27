@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(1);
+            AudioManager.PlaySound?.Invoke(AudioManager.STAR);
         }
         else if (collision.CompareTag("Key"))
         {
@@ -17,6 +18,7 @@ public class Ball : MonoBehaviour
         else if (collision.CompareTag("Fin"))
         {
             GameManager.FinishLevel();
+            
         }
     }
 }

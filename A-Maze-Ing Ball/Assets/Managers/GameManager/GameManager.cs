@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
         Time.timeScale = 0;
+        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
         TogglePause?.Invoke();
     }
 
@@ -53,5 +54,6 @@ public class GameManager : MonoBehaviour
         finished = true;
         Finish?.Invoke();
         Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
+        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
     }
 }
