@@ -4,13 +4,12 @@ using TMPro;
 
 public class GameState : MonoBehaviour
 {
-    [SerializeField]
-    Sprite[] starSprites;
-
-    private Image starSpriteImage;
-
-    public TextMeshProUGUI time;
     public static float timeElapsed;
+
+    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [SerializeField] Sprite[] starSprites;
+    private Image starSpriteImage;
+    public TextMeshProUGUI time;
 
     private void Start()
     {

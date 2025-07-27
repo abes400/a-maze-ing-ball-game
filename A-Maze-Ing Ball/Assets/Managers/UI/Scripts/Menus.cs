@@ -1,41 +1,66 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu, finishMenu, banner;
+    
+    [SerializeField] float loadDelay = 0.5f;
     // Start is called before the first frame update
-    void OnEnable()
+
+    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject finishMenu;
+    [SerializeField] GameObject banner;
+    [SerializeField] GameObject loadingTitle;
+    private void OnEnable()
     {
         GameManager.TogglePause += OnGamePause;
         GameManager.Finish += OnFinishLevel;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         GameManager.TogglePause -= OnGamePause;
         GameManager.Finish -= OnFinishLevel;
     }
 
-    void OnGamePause()
+    private void OnGamePause()
     {
         banner.SetActive(!GameManager.isPlaying);
         pauseMenu.SetActive(!GameManager.isPlaying);
     }
 
-    public void OnFinishLevel()
+    private void OnFinishLevel()
     {
         banner.SetActive(true);
         finishMenu.SetActive(true);
     }
 
-    public void Sound() => AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+    public void Continue()
+    {
+        AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+        GameManager.Unpause();
+    }
 
-    public void Continue() => GameManager.Unpause();
+    public void Restart() => StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().buildIndex));
 
-    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void Quit() => StartCoroutine(LoadSceneWithDelay());
 
-    public void Quit() => SceneManager.LoadScene("MainMenu");
+    public void Next() => StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().buildIndex + 2)); // Change to 1 on deploy
 
-    public void Next() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Change to 1 on deploy
+    private IEnumerator LoadSceneWithDelay(int sceneIndex = -1)
+    {
+        AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+
+        pauseMenu.SetActive(false);
+        finishMenu.SetActive(false);
+        loadingTitle.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(loadDelay);
+
+        if (sceneIndex == -1) SceneManager.LoadScene("MainMenu");
+        else SceneManager.LoadScene(sceneIndex);
+    }
 }
