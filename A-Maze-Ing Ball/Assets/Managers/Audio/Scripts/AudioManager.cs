@@ -3,8 +3,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
     [SerializeField] AudioClip BGM;
     [SerializeField] AudioClip[] audios;
