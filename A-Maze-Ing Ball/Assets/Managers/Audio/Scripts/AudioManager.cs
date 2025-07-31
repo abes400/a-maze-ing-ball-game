@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
 
     void OnGamePause()
     {
-        if (GameManager.isPlaying) musicSource.Play(); else musicSource.Pause();
+        //if (GameManager.isPlaying) musicSource.Play(); else musicSource.Pause();
     }
 
 }
