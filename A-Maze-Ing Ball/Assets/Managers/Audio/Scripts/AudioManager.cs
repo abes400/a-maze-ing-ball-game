@@ -1,8 +1,10 @@
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] AudioMixer audioMixer;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
@@ -14,6 +16,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        audioMixer.SetFloat("music", Volume.GetAudioValue(PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 1));
+        audioMixer.SetFloat("sfx", Volume.GetAudioValue(PlayerPrefs.HasKey("SFXVolume") ? PlayerPrefs.GetFloat("SFXVolume") : 1));
         musicSource.clip = BGM;
         musicSource.Play();
     }
