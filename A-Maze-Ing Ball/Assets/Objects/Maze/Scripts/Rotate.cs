@@ -12,8 +12,8 @@ public class Rotate : MonoBehaviour
     float currentVelocity = 00.0f;
     float targetAngle = 00.0f;
 
-    private void OnEnable() => GameManager.Finish += OnFinish;
-    private void OnDisable() => GameManager.Finish = OnFinish;
+    private void OnEnable() => GameManager.Finish += OnFinishLevel;
+    private void OnDisable() => GameManager.Finish = OnFinishLevel;
 
 
     private void Update()
@@ -37,5 +37,5 @@ public class Rotate : MonoBehaviour
 
     }
 
-    private void OnFinish() => targetAngle = 00.0f;
+    private void OnFinishLevel(bool dummy) => targetAngle = 00.0f;
 }

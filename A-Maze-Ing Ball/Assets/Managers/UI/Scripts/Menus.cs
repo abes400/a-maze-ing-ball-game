@@ -12,6 +12,7 @@ public class Menus : MonoBehaviour
     [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject finishMenu;
+    [SerializeField] GameObject failMenu;
     [SerializeField] GameObject banner;
     [SerializeField] GameObject loadingTitle;
     private void OnEnable()
@@ -28,14 +29,21 @@ public class Menus : MonoBehaviour
 
     private void OnGamePause()
     {
+        if(!GameManager.isPlaying) AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
         banner.SetActive(!GameManager.isPlaying);
         pauseMenu.SetActive(!GameManager.isPlaying);
     }
 
-    private void OnFinishLevel()
+    private void OnFinishLevel(bool succeeded) => StartCoroutine(FinishSceneWithDelay(succeeded));
+    private IEnumerator FinishSceneWithDelay(bool succeeded)
     {
+        yield return new WaitForSecondsRealtime(loadDelay);
+
+        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
+
         banner.SetActive(true);
-        finishMenu.SetActive(true);
+        if(succeeded) finishMenu.SetActive(true);
+        else          failMenu.SetActive(true);
     }
 
     public void Continue()
@@ -56,6 +64,7 @@ public class Menus : MonoBehaviour
 
         pauseMenu.SetActive(false);
         finishMenu.SetActive(false);
+        failMenu.SetActive(false);
         loadingTitle.SetActive(true);
 
         yield return new WaitForSecondsRealtime(loadDelay);

@@ -33,10 +33,7 @@ public class AudioManager : MonoBehaviour
         GameManager.TogglePause -= OnGamePause;
     }
 
-    private void PlaySFX(int audioIndex)
-    {
-        SFXSource.PlayOneShot(audios[audioIndex]);
-    }
+    private void PlaySFX(int audioIndex) => SFXSource.PlayOneShot(audios[audioIndex]);
 
     void OnGamePause()
     {

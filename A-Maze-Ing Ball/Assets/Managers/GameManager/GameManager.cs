@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static int collectedStars;
 
     public static Action<int> UpdateStars;
-    public static Action Finish;
+    public static Action<bool> Finish;
+    public static Action Fail;
     public static Action TogglePause;
 
     private void Start()
@@ -23,6 +24,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !finished)
         {
             if (isPlaying) PauseLevel(); else Unpause();
+        } else if (Input.GetKeyDown(KeyCode.Backspace) && !finished)
+        {
+            FailLevel();
         }
     }
 
@@ -36,7 +40,6 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
         Time.timeScale = 0;
-        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
         TogglePause?.Invoke();
     }
 
@@ -52,8 +55,14 @@ public class GameManager : MonoBehaviour
         // save game
         isPlaying = false;
         finished = true;
-        Finish?.Invoke();
+        Finish?.Invoke(true);
         Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
-        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
+    }
+
+    public static void FailLevel()
+    {
+        isPlaying = false;
+        finished = true;
+        Finish?.Invoke(false);
     }
 }

@@ -3,6 +3,22 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
+    private void OnEnable()
+    {
+        GameManager.Finish += OnFinishLevel;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Finish -= OnFinishLevel;
+    }
+
+    private void OnFinishLevel(bool succeeded)
+    {
+        AudioManager.PlaySound?.Invoke(succeeded ? AudioManager.DAMAGE : AudioManager.DAMAGE /*TODO change with another sound*/);
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Star"))
@@ -18,7 +34,7 @@ public class Ball : MonoBehaviour
         else if (collision.CompareTag("Fin"))
         {
             GameManager.FinishLevel();
-            
+
         }
     }
 }
