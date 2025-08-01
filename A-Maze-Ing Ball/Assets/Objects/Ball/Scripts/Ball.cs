@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
 
     private void OnFinishLevel(bool succeeded)
     {
-        AudioManager.PlaySound?.Invoke(succeeded ? AudioManager.DAMAGE : AudioManager.DAMAGE /*TODO change with another sound*/);
+        AudioManager.PlaySound?.Invoke(succeeded ? AudioManager.WIN : AudioManager.DAMAGE);
         gameObject.SetActive(false);
     }
 

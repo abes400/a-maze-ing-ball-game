@@ -26,11 +26,13 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound += PlaySFX;
         GameManager.TogglePause += OnGamePause;
+        GameManager.Finish += OnFinishLevel;
     }
     private void OnDisable()
     {
         PlaySound -= PlaySFX;
         GameManager.TogglePause -= OnGamePause;
+        GameManager.Finish -= OnFinishLevel;
     }
 
     private void PlaySFX(int audioIndex) => SFXSource.PlayOneShot(audios[audioIndex]);
@@ -39,5 +41,7 @@ public class AudioManager : MonoBehaviour
     {
         if (GameManager.isPlaying) musicSource.Play(); else musicSource.Pause();
     }
+
+    void OnFinishLevel(bool dummy) => musicSource.Pause();
 
 }
