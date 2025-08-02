@@ -26,6 +26,11 @@ public class Ball : MonoBehaviour
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(1);
             AudioManager.PlaySound?.Invoke(AudioManager.STAR);
+        } else if (collision.CompareTag("EvilStar"))
+        {
+            collision.gameObject.SetActive(false);
+            GameManager.OnStarCollected(-1);
+            AudioManager.PlaySound?.Invoke(AudioManager.STAR); // TODO: Change audio with another one
         }
         else if (collision.CompareTag("Key"))
         {

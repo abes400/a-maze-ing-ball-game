@@ -33,7 +33,9 @@ public class GameManager : MonoBehaviour
     public static void OnStarCollected(int incrementSize)
     {
         collectedStars += incrementSize;
-        UpdateStars?.Invoke(collectedStars);
+        
+        if (collectedStars < 0) FailLevel();
+        else UpdateStars?.Invoke(collectedStars);
     }
 
     public static void PauseLevel()
