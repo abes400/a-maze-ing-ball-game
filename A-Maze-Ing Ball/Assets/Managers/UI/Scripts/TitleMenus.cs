@@ -42,7 +42,7 @@ public class TitleMenus : MonoBehaviour
 
     public void Back()
     {
-        //LevelMenu.SetActive(false);
+        LevelMenu.SetActive(false);
         InstructionsMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         AboutMenu.SetActive(false);
