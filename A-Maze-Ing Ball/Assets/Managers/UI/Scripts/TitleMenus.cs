@@ -46,9 +46,15 @@ public class TitleMenus : MonoBehaviour
         InstructionsMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         AboutMenu.SetActive(false);
-        //QuitPopup.SetActive(false);
+        QuitPopup.SetActive(false);
 
         MainMenuSetActive(true);
+    }
+
+    public void ConfirmQuit()
+    {
+        Debug.Log("Program ended.");
+        Application.Quit(0);
     }
 
 
