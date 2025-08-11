@@ -32,10 +32,11 @@ public class GameState : MonoBehaviour
 
     void UpdateStars(int value) => starSpriteImage.sprite = starSprites[value];
 
-    public static string GetTimeCode()
+    public static string GetTimeCode(float timeOverride = -1)
     {
-        int min = Mathf.FloorToInt(timeElapsed / 60);
-        int sec = Mathf.FloorToInt(timeElapsed % 60);
+        if (timeOverride == -1) timeOverride = timeElapsed;
+        int min = Mathf.FloorToInt(timeOverride / 60);
+        int sec = Mathf.FloorToInt(timeOverride % 60);
         return string.Format("{0:00}:{1:00}", min, sec);
     }
 }

@@ -4,12 +4,14 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static bool isPlaying, finished;
-    public static int collectedStars;
+    public static int collectedStars, levelIndex;
 
     public static Action<int> UpdateStars;
     public static Action<bool> Finish;
     public static Action Fail;
     public static Action TogglePause;
+
+    [SerializeField] int thisLevelIndex;
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
         isPlaying = true;
         finished = false;
         collectedStars = 0;
+        levelIndex = thisLevelIndex;
     }
 
     void Update()
@@ -54,11 +57,18 @@ public class GameManager : MonoBehaviour
 
     public static void FinishLevel()
     {
-        // save game
         isPlaying = false;
         finished = true;
+        
+        PlayerPrefs.SetInt($"Level_{levelIndex}_STAR", collectedStars);
+        PlayerPrefs.SetFloat($"Level_{levelIndex}_TIME", GameState.timeElapsed);
+        if (PlayerPrefs.GetInt("Unlocked_Upto") == levelIndex)
+            PlayerPrefs.SetInt("Unlocked_Upto", levelIndex + 1);
+        PlayerPrefs.Save();
+
         Finish?.Invoke(true);
-        Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
+        //Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
+        
     }
 
     public static void FailLevel()
