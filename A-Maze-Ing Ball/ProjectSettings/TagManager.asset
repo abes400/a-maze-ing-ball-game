@@ -11,6 +11,7 @@ TagManager:
   - Key
   - Fin
   - EvilStar
+  - Base
   layers:
   - Default
   - TransparentFX

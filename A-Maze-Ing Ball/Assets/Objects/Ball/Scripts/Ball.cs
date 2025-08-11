@@ -26,7 +26,8 @@ public class Ball : MonoBehaviour
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(1);
             AudioManager.PlaySound?.Invoke(AudioManager.STAR);
-        } else if (collision.CompareTag("EvilStar"))
+        }
+        else if (collision.CompareTag("EvilStar"))
         {
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(-1);
@@ -41,5 +42,11 @@ public class Ball : MonoBehaviour
             GameManager.FinishLevel();
 
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Base"))
+            GameManager.FailLevel();
     }
 }
