@@ -8,13 +8,12 @@ public class GameState : MonoBehaviour
 
     [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
     [SerializeField] Sprite[] starSprites;
-    private Image starSpriteImage;
+    [SerializeField] Image starSpriteImage;
     public TextMeshProUGUI time;
 
     private void Start()
     {
         timeElapsed = 0;
-        starSpriteImage = GetComponent<Image>();
     }
 
     private void OnEnable() => GameManager.UpdateStars += UpdateStars;

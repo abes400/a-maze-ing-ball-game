@@ -40,7 +40,6 @@ public class Ball : MonoBehaviour
         else if (collision.CompareTag("Fin"))
         {
             GameManager.FinishLevel();
-
         }
     }
 
