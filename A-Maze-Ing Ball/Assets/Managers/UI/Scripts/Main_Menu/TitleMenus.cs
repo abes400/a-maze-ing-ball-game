@@ -19,7 +19,7 @@ public class TitleMenus : MonoBehaviour
     [SerializeField] GameObject quitPopup;
     [SerializeField] GameObject contentOfLevelView;
 
-    public void Start()
+    private void Start()
     {
         int unlockedUpto = PlayerPrefs.GetInt("Unlocked_Upto");
         if (unlockedUpto == 0)
@@ -33,6 +33,19 @@ public class TitleMenus : MonoBehaviour
             GameObject newLevelButton = Instantiate(levelButtonPrefab, contentOfLevelView.transform);
             newLevelButton.GetComponent<LevelButton>().InitButton(index, unlockedUpto);
         }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (resetPopup.activeInHierarchy)
+                AbortReset();
+            else if (!mainMenu.activeInHierarchy)
+                Back();
+            else
+                ConfirmQuit();
+        }
+            
     }
     public void GameStart()
     {
