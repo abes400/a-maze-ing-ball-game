@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TitleMenus : MonoBehaviour
@@ -12,10 +13,9 @@ public class TitleMenus : MonoBehaviour
     [SerializeField] GameObject instructionsMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject aboutMenu;
+    [SerializeField] GameObject resetPopup;
     [SerializeField] GameObject quitPopup;
     [SerializeField] GameObject contentOfLevelView;
-
-    GameObject[] levelButtons;
 
     public void Start()
     {
@@ -25,13 +25,11 @@ public class TitleMenus : MonoBehaviour
             PlayerPrefs.SetInt("Unlocked_Upto", 1);
             unlockedUpto = 1;
         }
-        
-        levelButtons = new GameObject[levelCount];
+
         for (int index = 1; index <= levelCount; index++)
         {
             GameObject newLevelButton = Instantiate(levelButtonPrefab, contentOfLevelView.transform);
             newLevelButton.GetComponent<LevelButton>().InitButton(index, unlockedUpto);
-            levelButtons[index - 1] = newLevelButton;
         }
     }
     public void GameStart()
@@ -52,13 +50,34 @@ public class TitleMenus : MonoBehaviour
         optionsMenu.SetActive(true);
     }
 
+    public void ConfirmReset()
+    {
+        optionsMenu.SetActive(false);
+        resetPopup.SetActive(true); 
+    }
+
+    public void AbortReset()
+    {
+        resetPopup.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+    public void Reset()
+    {
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void About()
     {
         MainMenuSetActive(false);
         aboutMenu.SetActive(true);
     }
 
-    public void Quit()
+    public void ConfirmQuit()
     {
         MainMenuSetActive(false);
         quitPopup.SetActive(true);
@@ -75,11 +94,7 @@ public class TitleMenus : MonoBehaviour
         MainMenuSetActive(true);
     }
 
-    public void ConfirmQuit()
-    {
-        Debug.Log("Program ended.");
-        Application.Quit(0);
-    }
+    public void Quit() => Application.Quit(0);
 
 
     private void MainMenuSetActive(bool active)
