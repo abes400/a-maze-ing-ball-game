@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -52,13 +53,13 @@ public class Menus : MonoBehaviour
         GameManager.Unpause();
     }
 
-    public void Restart() => StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().buildIndex));
+    public void Restart() => StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().name));
 
     public void Quit() => StartCoroutine(LoadSceneWithDelay());
 
-    public void Next() => StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().buildIndex + 2)); // Change to 1 on deploy
+    public void Next() => StartCoroutine(LoadSceneWithDelay("TestNXTLVL")); // Change to 1 on deploy
 
-    private IEnumerator LoadSceneWithDelay(int sceneIndex = -1)
+    private IEnumerator LoadSceneWithDelay(string sceneName = "MainMenu")
     {
         AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
 
@@ -68,8 +69,6 @@ public class Menus : MonoBehaviour
         loadingTitle.SetActive(true);
 
         yield return new WaitForSecondsRealtime(loadDelay);
-
-        if (sceneIndex == -1) SceneManager.LoadScene("MainMenu");
-        else SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
     }
 }
