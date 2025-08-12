@@ -57,7 +57,7 @@ public class Menus : MonoBehaviour
 
     public void Quit() => StartCoroutine(LoadSceneWithDelay());
 
-    public void Next() => StartCoroutine(LoadSceneWithDelay("TestNXTLVL")); // Change to 1 on deploy
+    public void Next() => StartCoroutine(LoadSceneWithDelay($"Level_{GameManager.levelIndex + 1}"));
 
     private IEnumerator LoadSceneWithDelay(string sceneName = "MainMenu")
     {

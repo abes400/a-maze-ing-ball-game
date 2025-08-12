@@ -1,17 +1,18 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static bool isPlaying, finished;
     public static int collectedStars, levelIndex;
+    public static string levelName;
 
     public static Action<int> UpdateStars;
     public static Action<bool> Finish;
     public static Action Fail;
     public static Action TogglePause;
 
-    [SerializeField] int thisLevelIndex;
 
     private void Start()
     {
@@ -19,7 +20,8 @@ public class GameManager : MonoBehaviour
         isPlaying = true;
         finished = false;
         collectedStars = 0;
-        levelIndex = thisLevelIndex;
+        levelName = SceneManager.GetActiveScene().name;
+        levelIndex = int.Parse(levelName.Split('_')[1]);
     }
 
     void Update()
@@ -60,8 +62,8 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         finished = true;
         
-        PlayerPrefs.SetInt($"Level_{levelIndex}_STAR", collectedStars);
-        PlayerPrefs.SetFloat($"Level_{levelIndex}_TIME", GameState.timeElapsed);
+        PlayerPrefs.SetInt($"{levelName}_STAR", collectedStars);
+        PlayerPrefs.SetFloat($"{levelName}_TIME", GameState.timeElapsed);
         if (PlayerPrefs.GetInt("Unlocked_Upto") == levelIndex)
             PlayerPrefs.SetInt("Unlocked_Upto", levelIndex + 1);
         PlayerPrefs.Save();
