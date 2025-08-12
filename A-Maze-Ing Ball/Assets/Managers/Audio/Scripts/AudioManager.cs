@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip BGM;
     [SerializeField] AudioClip[] audios;
 
-    public enum SFXName { BUTTON, DAMAGE, KEY, MENU_OPEN, ROTATE, STAR, TELEPORT, WIN }
+    public enum SFXName { BUTTON, MENU_OPEN, DAMAGE, KEY, ROTATE, STAR, TELEPORT, WIN };
     public static Action<SFXName> PlaySound;
 
     private void Start()
