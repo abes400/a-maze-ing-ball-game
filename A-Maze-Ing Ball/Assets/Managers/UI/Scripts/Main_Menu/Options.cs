@@ -15,6 +15,7 @@ public class Options : MonoBehaviour
 
     public void ToggleFullScreen()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         bool fullScreenEnabled = !Screen.fullScreen;
         int newWidth, newHeight;
         FullScreenMode newFSMode;

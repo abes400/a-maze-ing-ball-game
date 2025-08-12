@@ -36,35 +36,41 @@ public class TitleMenus : MonoBehaviour
     }
     public void GameStart()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         MainMenuSetActive(false);
         levelMenu.SetActive(true);
     }
 
     public void Instructions()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         MainMenuSetActive(false);
         instructionsMenu.SetActive(true);
     }
 
     public void Options()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         MainMenuSetActive(false);
         optionsMenu.SetActive(true);
     }
 
     public void ConfirmReset()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         optionsMenu.SetActive(false);
         resetPopup.SetActive(true); 
     }
 
     public void AbortReset()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         resetPopup.SetActive(false);
         optionsMenu.SetActive(true);
     }
     public void Reset()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
         float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
         PlayerPrefs.DeleteAll();
@@ -75,18 +81,21 @@ public class TitleMenus : MonoBehaviour
 
     public void About()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         MainMenuSetActive(false);
         aboutMenu.SetActive(true);
     }
 
     public void ConfirmQuit()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         MainMenuSetActive(false);
         quitPopup.SetActive(true);
     }
 
     public void Back()
     {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.TELEPORT);
         levelMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         optionsMenu.SetActive(false);
