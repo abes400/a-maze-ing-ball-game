@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
-    
+
     [SerializeField] float loadDelay = 0.5f;
     // Start is called before the first frame update
 
@@ -30,9 +30,10 @@ public class Menus : MonoBehaviour
 
     private void OnGamePause()
     {
-        if(!GameManager.isPlaying) AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
+        if (!GameManager.isPlaying) AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
         banner.SetActive(!GameManager.isPlaying);
         pauseMenu.SetActive(!GameManager.isPlaying);
+        SetCursorLocked(GameManager.isPlaying);
     }
 
     private void OnFinishLevel(bool succeeded) => StartCoroutine(FinishSceneWithDelay(succeeded));
@@ -43,8 +44,9 @@ public class Menus : MonoBehaviour
         AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
 
         banner.SetActive(true);
-        if(succeeded) finishMenu.SetActive(true);
-        else          failMenu.SetActive(true);
+        if (succeeded) finishMenu.SetActive(true);
+        else failMenu.SetActive(true);
+        SetCursorLocked(false);
     }
 
     public void Continue()
@@ -71,4 +73,7 @@ public class Menus : MonoBehaviour
         yield return new WaitForSecondsRealtime(loadDelay);
         SceneManager.LoadScene(sceneName);
     }
+    
+    public static void SetCursorLocked(bool locked) => Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+
 }

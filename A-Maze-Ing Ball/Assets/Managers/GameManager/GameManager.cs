@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         collectedStars = 0;
         levelName = SceneManager.GetActiveScene().name;
         levelIndex = int.Parse(levelName.Split('_')[1]);
+        Menus.SetCursorLocked(true);
     }
 
     void Update()
@@ -29,7 +30,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !finished)
         {
             if (isPlaying) PauseLevel(); else Unpause();
-        } else if (Input.GetKeyDown(KeyCode.Backspace) && !finished)
+        }
+        else if (Input.GetKeyDown(KeyCode.Backspace) && !finished)
         {
             FailLevel();
         }
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
     public static void OnStarCollected(int incrementSize)
     {
         collectedStars += incrementSize;
-        
+
         if (collectedStars < 0) FailLevel();
         else UpdateStars?.Invoke(collectedStars);
     }
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
         finished = true;
-        
+
         PlayerPrefs.SetInt($"{levelName}_STAR", collectedStars);
         PlayerPrefs.SetFloat($"{levelName}_TIME", GameState.timeElapsed);
         if (PlayerPrefs.GetInt("Unlocked_Upto") == levelIndex)
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
 
         Finish?.Invoke(true);
         //Debug.Log(string.Format("Level finished with {0} stars in {1} seconds", collectedStars, GameState.GetTimeCode()));
-        
+
     }
 
     public static void FailLevel()
