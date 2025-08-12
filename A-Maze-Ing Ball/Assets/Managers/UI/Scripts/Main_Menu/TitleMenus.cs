@@ -6,7 +6,8 @@ public class TitleMenus : MonoBehaviour
 {
     [SerializeField] int levelCount;
     [SerializeField] GameObject levelButtonPrefab;
-    [SerializeField] GameObject logo;
+    [SerializeField] GameObject logoBase;
+    [SerializeField] GameObject menuBase;
     [SerializeField] GameObject byLine;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject levelMenu;
@@ -99,7 +100,8 @@ public class TitleMenus : MonoBehaviour
 
     private void MainMenuSetActive(bool active)
     {
-        logo.SetActive(active);
+        logoBase.SetActive(active);
+        menuBase.SetActive(!active);
         byLine.SetActive(active);
         mainMenu.SetActive(active);
     }
