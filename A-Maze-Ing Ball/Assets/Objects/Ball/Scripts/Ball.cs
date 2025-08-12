@@ -37,9 +37,9 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.GetComponent<Key>().Collect();
         }
-        else if (collision.CompareTag("Fin"))
+        else if (collision.CompareTag("FinishKey"))
         {
-            GameManager.FinishLevel();
+            collision.gameObject.GetComponent<FinishKey>().Collect();
         }
     }
 
