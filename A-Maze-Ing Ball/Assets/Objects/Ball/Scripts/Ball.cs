@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
 
     private void OnFinishLevel(bool succeeded)
     {
-        AudioManager.PlaySound?.Invoke(succeeded ? AudioManager.WIN : AudioManager.DAMAGE);
+        AudioManager.PlaySound?.Invoke(succeeded ? AudioManager.SFXName.WIN : AudioManager.SFXName.DAMAGE);
         gameObject.SetActive(false);
     }
 
@@ -25,13 +25,13 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(1);
-            AudioManager.PlaySound?.Invoke(AudioManager.STAR);
+            AudioManager.PlaySound?.Invoke(AudioManager.SFXName.STAR);
         }
         else if (collision.CompareTag("EvilStar"))
         {
             collision.gameObject.SetActive(false);
             GameManager.OnStarCollected(-1);
-            AudioManager.PlaySound?.Invoke(AudioManager.STAR); // TODO: Change audio with another one
+            AudioManager.PlaySound?.Invoke(AudioManager.SFXName.STAR); // TODO: Change audio with another one
         }
         else if (collision.CompareTag("Key"))
         {

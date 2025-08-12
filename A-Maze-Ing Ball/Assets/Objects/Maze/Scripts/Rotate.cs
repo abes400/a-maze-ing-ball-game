@@ -22,12 +22,12 @@ public class Rotate : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                AudioManager.PlaySound?.Invoke(AudioManager.ROTATE);
+                AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
                 targetAngle += rotationAngle;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                AudioManager.PlaySound?.Invoke(AudioManager.ROTATE);
+                AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
                 targetAngle -= rotationAngle;
             }
         }

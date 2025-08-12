@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class TitleMenus : MonoBehaviour
 {
     [SerializeField] int levelCount;
+    [SerializeField] AudioManager audioManager;
     [SerializeField] GameObject levelButtonPrefab;
     [SerializeField] GameObject logoBase;
     [SerializeField] GameObject menuBase;

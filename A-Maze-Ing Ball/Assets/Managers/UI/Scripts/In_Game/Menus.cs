@@ -30,7 +30,7 @@ public class Menus : MonoBehaviour
 
     private void OnGamePause()
     {
-        if (!GameManager.isPlaying) AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
+        if (!GameManager.isPlaying) AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
         banner.SetActive(!GameManager.isPlaying);
         pauseMenu.SetActive(!GameManager.isPlaying);
         SetCursorLocked(GameManager.isPlaying);
@@ -41,7 +41,7 @@ public class Menus : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(loadDelay);
 
-        AudioManager.PlaySound?.Invoke(AudioManager.MENU_OPEN);
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
 
         banner.SetActive(true);
         if (succeeded) finishMenu.SetActive(true);
@@ -51,7 +51,7 @@ public class Menus : MonoBehaviour
 
     public void Continue()
     {
-        AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         GameManager.Unpause();
     }
 
@@ -63,7 +63,7 @@ public class Menus : MonoBehaviour
 
     private IEnumerator LoadSceneWithDelay(string sceneName = "MainMenu")
     {
-        AudioManager.PlaySound?.Invoke(AudioManager.BUTTON);
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
 
         pauseMenu.SetActive(false);
         finishMenu.SetActive(false);

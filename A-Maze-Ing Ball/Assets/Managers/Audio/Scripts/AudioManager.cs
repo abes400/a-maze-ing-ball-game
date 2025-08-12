@@ -11,8 +11,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip BGM;
     [SerializeField] AudioClip[] audios;
 
-    public const short BUTTON = 0, DAMAGE = 1, KEY = 2, MENU_OPEN = 3, ROTATE = 4, STAR = 5, TELEPORT = 6, WIN = 7;
-    public static Action<int> PlaySound;
+    public enum SFXName { BUTTON, DAMAGE, KEY, MENU_OPEN, ROTATE, STAR, TELEPORT, WIN }
+    public static Action<SFXName> PlaySound;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         GameManager.Finish -= OnFinishLevel;
     }
 
-    private void PlaySFX(int audioIndex) => SFXSource.PlayOneShot(audios[audioIndex]);
+    private void PlaySFX(SFXName audioIndex) => SFXSource.PlayOneShot(audios[(int) audioIndex]);
 
     void OnGamePause()
     {
