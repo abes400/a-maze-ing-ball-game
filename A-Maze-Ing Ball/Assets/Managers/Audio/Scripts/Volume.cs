@@ -12,11 +12,10 @@ public class Volume : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
 
-    private void Start()
+    private void OnEnable()
     {
         musicSlider.value = PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 1;
         SFXSlider.value = PlayerPrefs.HasKey("SFXVolume") ? PlayerPrefs.GetFloat("SFXVolume") : 1;
-        PlayerPrefs.DeleteAll();
     }
 
     public void AdjustMusic()

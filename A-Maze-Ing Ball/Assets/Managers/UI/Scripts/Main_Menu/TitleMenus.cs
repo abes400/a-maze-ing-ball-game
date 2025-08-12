@@ -36,31 +36,31 @@ public class TitleMenus : MonoBehaviour
     }
     public void GameStart()
     {
-        mainMenuSetActive(false);
+        MainMenuSetActive(false);
         levelMenu.SetActive(true);
     }
 
     public void Instructions()
     {
-        mainMenuSetActive(false);
+        MainMenuSetActive(false);
         instructionsMenu.SetActive(true);
     }
 
     public void Options()
     {
-        mainMenuSetActive(false);
+        MainMenuSetActive(false);
         optionsMenu.SetActive(true);
     }
 
     public void About()
     {
-        mainMenuSetActive(false);
+        MainMenuSetActive(false);
         aboutMenu.SetActive(true);
     }
 
     public void Quit()
     {
-        mainMenuSetActive(false);
+        MainMenuSetActive(false);
         quitPopup.SetActive(true);
     }
 
@@ -72,7 +72,7 @@ public class TitleMenus : MonoBehaviour
         aboutMenu.SetActive(false);
         quitPopup.SetActive(false);
 
-        mainMenuSetActive(true);
+        MainMenuSetActive(true);
     }
 
     public void ConfirmQuit()
@@ -82,7 +82,7 @@ public class TitleMenus : MonoBehaviour
     }
 
 
-    private void mainMenuSetActive(bool active)
+    private void MainMenuSetActive(bool active)
     {
         logo.SetActive(active);
         byLine.SetActive(active);

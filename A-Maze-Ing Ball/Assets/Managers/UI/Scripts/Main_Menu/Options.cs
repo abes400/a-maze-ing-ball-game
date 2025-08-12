@@ -16,12 +16,6 @@ public class Options : MonoBehaviour
     public void ToggleFullScreen()
     {
         bool fullScreenEnabled = !Screen.fullScreen;
-        buttonText.text = $"Fullscreen: {(fullScreenEnabled ? "ON" : "OFF")}";
-        SetFullScreen(fullScreenEnabled);
-    }
-
-    public static void SetFullScreen(bool fullScreenEnabled)
-    {
         int newWidth, newHeight;
         FullScreenMode newFSMode;
 
@@ -30,15 +24,19 @@ public class Options : MonoBehaviour
             newWidth = Display.main.systemWidth;
             newHeight = Display.main.systemHeight;
             newFSMode = FullScreenMode.FullScreenWindow;
+            buttonText.text = "Fullscreen: ON";
         }
         else
         {
             newWidth = (int)(Display.main.systemWidth * 0.8f);
             newHeight = (int)(Display.main.systemHeight * 0.8f);
             newFSMode = FullScreenMode.Windowed;
+            buttonText.text = "Fullscreen: OFF";
         }
 
         Screen.SetResolution(newWidth, newHeight, newFSMode);
         PlayerPrefs.SetInt("Fullscreen", fullScreenEnabled ? 1 : 0);
+        PlayerPrefs.Save();
+
     }
 }
