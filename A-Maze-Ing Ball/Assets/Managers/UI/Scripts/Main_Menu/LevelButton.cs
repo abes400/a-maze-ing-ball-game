@@ -14,7 +14,10 @@ public class LevelButton : MonoBehaviour
     {
         levelText.text = level.ToString();
         bool unlockable = level <= unlockedUpto;
-        timeText.enabled = starSpriteImage.enabled = GetComponent<Button>().interactable = unlockable;
+        timeText.enabled
+            = starSpriteImage.enabled
+            = GetComponent<Button>().interactable
+            = unlockable;
         lockedText.enabled = !unlockable;
         if (unlockable)
         {

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool isPlaying, finished;
+    public static bool isPlaying, finished, loading = false;
     public static int collectedStars, levelIndex;
     public static string levelName;
 
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        loading = true;
         Time.timeScale = 1;
         isPlaying = true;
         finished = false;
@@ -23,11 +24,13 @@ public class GameManager : MonoBehaviour
         levelName = SceneManager.GetActiveScene().name;
         levelIndex = int.Parse(levelName.Split('_')[1]);
         Menus.SetCursorLocked(true);
+        loading = false;
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !finished)
+        if (Input.GetKeyDown(KeyCode.Escape) && !finished && !loading)
         {
             if (isPlaying) PauseLevel(); else Unpause();
         }

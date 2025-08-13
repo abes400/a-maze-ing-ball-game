@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class TitleMenus : MonoBehaviour
 {
     [SerializeField] int levelCount;
+    [SerializeField] float loadDelay = 0.5f;
     [SerializeField] AudioManager audioManager;
     [SerializeField] GameObject levelButtonPrefab;
     [SerializeField] GameObject logoBase;
@@ -18,9 +20,14 @@ public class TitleMenus : MonoBehaviour
     [SerializeField] GameObject resetPopup;
     [SerializeField] GameObject quitPopup;
     [SerializeField] GameObject contentOfLevelView;
+    [SerializeField] GameObject loadingBanner;
+
+    private bool loading = true;
+    private static bool returedFromGame = false;
 
     private void Start()
     {
+        loading = false;
         int unlockedUpto = PlayerPrefs.GetInt("Unlocked_Upto");
         if (unlockedUpto == 0)
         {
@@ -32,11 +39,18 @@ public class TitleMenus : MonoBehaviour
         {
             GameObject newLevelButton = Instantiate(levelButtonPrefab, contentOfLevelView.transform);
             newLevelButton.GetComponent<LevelButton>().InitButton(index, unlockedUpto);
+            int levelIndex = index;
+            newLevelButton.GetComponent<Button>().onClick.AddListener(() =>
+                StartCoroutine(LoadSceneWithDelay($"Level_{levelIndex}"))
+            );
         }
     }
+
+    private void OnEnable() => StartCoroutine(OpenMenuWithDelay());
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !loading)
         {
             if (resetPopup.activeInHierarchy)
                 AbortReset();
@@ -45,8 +59,17 @@ public class TitleMenus : MonoBehaviour
             else
                 ConfirmQuit();
         }
-            
     }
+
+    private IEnumerator OpenMenuWithDelay()
+    {
+        yield return new WaitForSecondsRealtime(loadDelay);
+
+        if (returedFromGame) GameStart();
+        else Back();
+        loading = false;
+    }
+
     public void GameStart()
     {
         AudioManager.PlaySound?.Invoke(AudioManager.SFXName.MENU_OPEN);
@@ -72,7 +95,7 @@ public class TitleMenus : MonoBehaviour
     {
         AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
         optionsMenu.SetActive(false);
-        resetPopup.SetActive(true); 
+        resetPopup.SetActive(true);
     }
 
     public void AbortReset()
@@ -89,7 +112,7 @@ public class TitleMenus : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(LoadSceneWithDelay(SceneManager.GetActiveScene().name, false, false));
     }
 
     public void About()
@@ -127,5 +150,21 @@ public class TitleMenus : MonoBehaviour
         menuBase.SetActive(!active);
         byLine.SetActive(active);
         mainMenu.SetActive(active);
+    }
+    
+    private IEnumerator LoadSceneWithDelay(string sceneName, bool buttonSound = true, bool loadLevelScene = true)
+    {
+        loading = true;
+        returedFromGame = loadLevelScene;
+
+        if (buttonSound) AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
+
+        levelMenu.SetActive(false);
+        resetPopup.SetActive(false);
+        menuBase.SetActive(false);
+        loadingBanner.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(loadDelay);
+        SceneManager.LoadScene(sceneName);
     }
 }

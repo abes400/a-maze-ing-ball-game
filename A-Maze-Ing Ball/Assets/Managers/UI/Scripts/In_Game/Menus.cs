@@ -63,6 +63,7 @@ public class Menus : MonoBehaviour
 
     private IEnumerator LoadSceneWithDelay(string sceneName = "MainMenu")
     {
+        GameManager.loading = true;
         AudioManager.PlaySound?.Invoke(AudioManager.SFXName.BUTTON);
 
         pauseMenu.SetActive(false);
