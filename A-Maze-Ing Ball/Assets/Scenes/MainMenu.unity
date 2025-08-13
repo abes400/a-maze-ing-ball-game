@@ -397,25 +397,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1205120861686915456, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428246958696462476, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1887067685140286370, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5254264772075782325, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6338341158085359195, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6534271262887074545, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
       propertyPath: m_Pivot.x
@@ -496,14 +480,6 @@ PrefabInstance:
     - target: {fileID: 6534271262887074545, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6769433492592773088, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7614414404233018627, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
