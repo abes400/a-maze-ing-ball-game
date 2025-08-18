@@ -41,11 +41,9 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.GetComponent<FinishKey>().Collect();
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Base"))
+        else if (collision.CompareTag("Pitfall"))
+        {
             GameManager.FailLevel();
+        }
     }
 }
