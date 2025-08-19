@@ -13,7 +13,6 @@ TagManager:
   - EvilStar
   - Base
   - FinishKey
-  - Pitfall
   layers:
   - Default
   - TransparentFX
