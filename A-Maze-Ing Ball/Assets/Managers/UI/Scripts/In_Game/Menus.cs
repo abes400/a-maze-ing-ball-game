@@ -11,6 +11,7 @@ public class Menus : MonoBehaviour
     // Start is called before the first frame update
 
     [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Menu Objects    -----")]
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject finishMenu;
     [SerializeField] GameObject failMenu;

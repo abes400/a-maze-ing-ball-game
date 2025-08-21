@@ -5,11 +5,13 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
 
     [SerializeField] AudioClip BGM;
     [SerializeField] AudioClip[] audios;
+
+    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
     public enum SFXName { BUTTON, MENU_OPEN, TELEPORT, DAMAGE, KEY, ROTATE, STAR, WIN };
     public static Action<SFXName> PlaySound;

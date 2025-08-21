@@ -4,8 +4,10 @@ using TMPro;
 
 public class FinishStat : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timeStat;
     [SerializeField] Sprite[] starSprites;
+    
+    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [SerializeField] TextMeshProUGUI timeStat;
 
     private void Start()
     {

@@ -5,21 +5,31 @@ using UnityEngine.UI;
 
 public class TitleMenus : MonoBehaviour
 {
+    [Header("-----    General Settings    -----")]
     [SerializeField] int levelCount;
     [SerializeField] float loadDelay = 0.5f;
-    [SerializeField] AudioManager audioManager;
-    [SerializeField] GameObject levelButtonPrefab;
+
+    [Header("-----    UI Elements    -----")]
     [SerializeField] GameObject logoBase;
     [SerializeField] GameObject menuBase;
     [SerializeField] GameObject byLine;
+
+    [Header("-----    Menu Objects    -----")]
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject levelMenu;
     [SerializeField] GameObject instructionsMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject aboutMenu;
+
+    [Header("-----    Popup Objects    -----")]
     [SerializeField] GameObject resetPopup;
     [SerializeField] GameObject quitPopup;
+
+    [Header("-----    Level Menu Objects    -----")]
+    [SerializeField] GameObject levelButtonPrefab;
     [SerializeField] GameObject contentOfLevelView;
+
+    [Header("")]
     [SerializeField] GameObject loadingBanner;
 
     private bool loading = true;

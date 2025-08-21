@@ -4,11 +4,13 @@ using TMPro;
 
 public class LevelButton : MonoBehaviour
 {
+    [SerializeField] Sprite[] starSprites;
+    
+    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI lockedText;
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] Image starSpriteImage;
-    [SerializeField] Sprite[] starSprites;
 
     public void InitButton(int level, int unlockedUpto)
     {
