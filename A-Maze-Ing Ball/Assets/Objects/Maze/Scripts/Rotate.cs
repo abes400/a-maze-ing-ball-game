@@ -13,26 +13,50 @@ public class Rotate : MonoBehaviour
     private void OnEnable() => GameManager.Finish += OnFinishLevel;
     private void OnDisable() => GameManager.Finish = OnFinishLevel;
 
+//    #if UNITY_ANDROID || UNITY_IOS
+    Touch touch;
+    private float touchX;
+    private readonly float screenMid = Screen.width / 2;
+//    #endif
 
     private void Update()
     {
         if (GameManager.isPlaying)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+ //           #if UNITY_ANDROID || UNITY_IOS
+            if (Input.touchCount == 1)
             {
-                AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
-                targetAngle += rotationAngle;
+                touch = Input.GetTouch(0);
+                touchX = touch.position.x;
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    if (touchX > screenMid) Right();
+                    else Left();
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
-                targetAngle -= rotationAngle;
-            }
+ //           #else
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) Left();
+            else if (Input.GetKeyDown(KeyCode.RightArrow)) Right();
+            
+//            #endif
         }
 
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, rotationTime);
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
+    }
+
+    private void Left()
+    {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
+        targetAngle += rotationAngle;
+    }
+
+    private void Right()
+    {
+        AudioManager.PlaySound?.Invoke(AudioManager.SFXName.ROTATE);
+        targetAngle -= rotationAngle;
     }
 
     private void OnFinishLevel(bool dummy) => targetAngle = 00.0f;
