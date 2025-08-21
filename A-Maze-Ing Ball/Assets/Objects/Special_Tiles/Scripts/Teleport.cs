@@ -3,11 +3,13 @@ using System;
 
 public class Teleport : MonoBehaviour
 {
-
+    [Header("-----    Teleport Settings   -----")]
     [SerializeField] short channel;
     [SerializeField] bool locked = false;
 
-    public Sprite LockSprite, UnlockSprite;
+    [Header("")]
+    [SerializeField] Sprite LockSprite;
+    [SerializeField] Sprite UnlockSprite;
     private SpriteRenderer spriteRenderer;
 
     protected bool canTeleport = true;
