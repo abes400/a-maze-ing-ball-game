@@ -39,11 +39,11 @@ public class AudioManager : MonoBehaviour
 
     private void PlaySFX(SFXName audioIndex) => SFXSource.PlayOneShot(audios[(int) audioIndex]);
 
-    void OnGamePause()
+    private void OnGamePause()
     {
         if (GameManager.isPlaying) musicSource.Play(); else musicSource.Pause();
     }
 
-    void OnFinishLevel(bool dummy) => musicSource.Pause();
+    private void OnFinishLevel(bool dummy) => musicSource.Pause();
 
 }

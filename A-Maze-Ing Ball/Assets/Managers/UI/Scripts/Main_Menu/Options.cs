@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ public class Options : MonoBehaviour
     [SerializeField] GameObject fullScreenButton;
     TextMeshProUGUI buttonText;
 
-    void OnEnable()
+    private void OnEnable()
     {
         buttonText = fullScreenButton.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = $"Fullscreen: {(Screen.fullScreen ? "ON" : "OFF")}";

@@ -3,15 +3,9 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
-    private void OnEnable()
-    {
-        GameManager.Finish += OnFinishLevel;
-    }
+    private void OnEnable() =>  GameManager.Finish += OnFinishLevel;
 
-    private void OnDisable()
-    {
-        GameManager.Finish -= OnFinishLevel;
-    }
+    private void OnDisable() => GameManager.Finish -= OnFinishLevel;
 
     private void OnFinishLevel(bool succeeded)
     {

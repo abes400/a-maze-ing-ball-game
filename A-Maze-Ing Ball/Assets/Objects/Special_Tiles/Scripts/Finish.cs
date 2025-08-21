@@ -6,16 +6,16 @@ public class Finish : MonoBehaviour
     [SerializeField] private GameObject enabledLight;
     private bool activated = false;
 
-    void OnEnable() => FinishKey.OnUnlock += OnUnlock;
-    void OnDisable() => FinishKey.OnUnlock -= OnUnlock;
+    private void OnEnable() => FinishKey.OnUnlock += OnUnlock;
+    private void OnDisable() => FinishKey.OnUnlock -= OnUnlock;
 
-    void OnUnlock()
+    private void OnUnlock()
     {
         activated = true;
         enabledLight.SetActive(true);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (activated && collision.CompareTag("Ball"))
             GameManager.FinishLevel();

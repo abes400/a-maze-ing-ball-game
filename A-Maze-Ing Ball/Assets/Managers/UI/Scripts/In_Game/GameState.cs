@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour
         }
     }
 
-    void UpdateStars(int value) => starSpriteImage.sprite = starSprites[value];
+    private void UpdateStars(int value) => starSpriteImage.sprite = starSprites[value];
 
     public static string GetTimeCode(float timeOverride = -1)
     {

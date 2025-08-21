@@ -3,14 +3,12 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
 
-    [SerializeField]
-    float rotationAngle = 30.0f;
+    [SerializeField] float rotationAngle = 30.0f;
 
-    [SerializeField]
-    float rotationTime = 00.2f;
+    [SerializeField] float rotationTime = 00.2f;
 
-    float currentVelocity = 00.0f;
-    float targetAngle = 00.0f;
+    private float currentVelocity = 00.0f;
+    private float targetAngle = 00.0f;
 
     private void OnEnable() => GameManager.Finish += OnFinishLevel;
     private void OnDisable() => GameManager.Finish = OnFinishLevel;
