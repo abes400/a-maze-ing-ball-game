@@ -24,6 +24,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8044773038083014683
+  - m_Id: 15627476525056
+    m_Key: lvl1indicator
+    m_Metadata:
+      m_Items:
+      - rid: 8044773038083014817
+  - m_Id: 15646761934848
+    m_Key: lvl1indicator - Mobile
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -39,3 +48,21 @@ MonoBehaviour:
       type: {class: PlatformOverride, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_PlatformOverrides: []
+    - rid: 8044773038083014817
+      type: {class: PlatformOverride, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_PlatformOverrides:
+        - platform: 11
+          entryOverrideType: 2
+          tableReference:
+            m_TableCollectionName: GUID:d5f8acaa2c9234a01b8545085cd75ac1
+          tableEntryReference:
+            m_KeyId: 15646761934848
+            m_Key: 
+        - platform: 8
+          entryOverrideType: 2
+          tableReference:
+            m_TableCollectionName: GUID:d5f8acaa2c9234a01b8545085cd75ac1
+          tableEntryReference:
+            m_KeyId: 15646761934848
+            m_Key: 

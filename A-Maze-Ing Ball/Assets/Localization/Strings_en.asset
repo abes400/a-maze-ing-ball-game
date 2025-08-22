@@ -155,6 +155,16 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 15627476525056
+    m_Localized: 'Level 1
+
+      Use <color=yellow>Arrow Keys</color> to move'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15646761934848
+    m_Localized: Level 1
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -163,6 +173,13 @@ MonoBehaviour:
       data:
         m_PlatformOverrides:
         - platform: 11
+          entryOverrideType: 2
+          tableReference:
+            m_TableCollectionName: GUID:d5f8acaa2c9234a01b8545085cd75ac1
+          tableEntryReference:
+            m_KeyId: 536098103296
+            m_Key: 
+        - platform: 8
           entryOverrideType: 2
           tableReference:
             m_TableCollectionName: GUID:d5f8acaa2c9234a01b8545085cd75ac1

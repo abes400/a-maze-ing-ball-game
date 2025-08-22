@@ -9,6 +9,9 @@ public class Options : MonoBehaviour
 
     private void OnEnable()
     {
+        #if !UNITY_ANDROID && !UNITY_IOS
+        fullScreenButton.SetActive(true);
+        #endif
         buttonText = fullScreenButton.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = $"Fullscreen: {(Screen.fullScreen ? "ON" : "OFF")}";
     }

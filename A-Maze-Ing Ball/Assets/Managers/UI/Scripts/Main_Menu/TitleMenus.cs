@@ -15,6 +15,7 @@ public class TitleMenus : MonoBehaviour
     [SerializeField] GameObject logoBase;
     [SerializeField] GameObject menuBase;
     [SerializeField] GameObject byLine;
+    [SerializeField] GameObject quitButton;
 
     [Header("-----    Menu Objects    -----")]
     [SerializeField] GameObject mainMenu;
@@ -39,6 +40,10 @@ public class TitleMenus : MonoBehaviour
 
     private void Start()
     {
+        #if !UNITY_ANDROID && !UNITY_IOS
+        quitButton.SetActive(true);
+        #endif
+        
         loading = false;
         int unlockedUpto = PlayerPrefs.GetInt("Unlocked_Upto");
         if (unlockedUpto == 0)
