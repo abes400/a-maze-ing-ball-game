@@ -204,7 +204,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!81 &1609590643
 AudioListener:
@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: audios.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1147818367341731138, guid: c5c51fb3de7a24f45ba9e4505edfba90, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1871224917392320096, guid: c5c51fb3de7a24f45ba9e4505edfba90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 297.00003
@@ -380,9 +384,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3442428262945716531, guid: c5c51fb3de7a24f45ba9e4505edfba90, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4316882152692315972, guid: c5c51fb3de7a24f45ba9e4505edfba90, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316882152692315972, guid: c5c51fb3de7a24f45ba9e4505edfba90, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

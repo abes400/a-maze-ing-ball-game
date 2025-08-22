@@ -9,6 +9,8 @@ public class Menus : MonoBehaviour
     // Start is called before the first frame update
 
     [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [SerializeField] GameObject mobileAddonPrefab;
+
     [Header("-----    Menu Objects    -----")]
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject finishMenu;
@@ -19,6 +21,9 @@ public class Menus : MonoBehaviour
     {
         GameManager.TogglePause += OnGamePause;
         GameManager.Finish += OnFinishLevel;
+        #if UNITY_ANDROID || UNITY_IOS
+        Instantiate(mobileAddonPrefab, transform);
+        #endif
     }
 
     private void OnDisable()

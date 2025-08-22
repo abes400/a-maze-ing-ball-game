@@ -13,33 +13,32 @@ public class Rotate : MonoBehaviour
     private void OnEnable() => GameManager.Finish += OnFinishLevel;
     private void OnDisable() => GameManager.Finish = OnFinishLevel;
 
-//    #if UNITY_ANDROID || UNITY_IOS
+    #if UNITY_ANDROID || UNITY_IOS
     Touch touch;
-    private float touchX;
+    private float touchX, touchY;
     private readonly float screenMid = Screen.width / 2;
-//    #endif
+    private readonly float screenTop = Screen.height * 5 / 6;
+    #endif
 
     private void Update()
     {
         if (GameManager.isPlaying)
         {
- //           #if UNITY_ANDROID || UNITY_IOS
+            #if UNITY_ANDROID || UNITY_IOS
             if (Input.touchCount == 1)
             {
                 touch = Input.GetTouch(0);
-                touchX = touch.position.x;
 
-                if (touch.phase == TouchPhase.Began)
+                if (touch.phase == TouchPhase.Began && touch.position.y <= screenTop)
                 {
-                    if (touchX > screenMid) Right();
+                    if (touch.position.x > screenMid) Right();
                     else Left();
                 }
             }
- //           #else
+            #else
             if (Input.GetKeyDown(KeyCode.LeftArrow)) Left();
             else if (Input.GetKeyDown(KeyCode.RightArrow)) Right();
-            
-//            #endif
+            #endif
         }
 
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, rotationTime);

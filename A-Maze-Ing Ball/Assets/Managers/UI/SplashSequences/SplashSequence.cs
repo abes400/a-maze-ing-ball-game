@@ -11,6 +11,10 @@ public class SplashSequence : MonoBehaviour
 
     void Start() => StartCoroutine(ShowWarningSequence());
 
+    #if UNITY_ANDROID
+    private void Awake() => Application.targetFrameRate = 60;
+    #endif
+
     private IEnumerator ShowWarningSequence()
     {
         videoPlayer.Prepare();
