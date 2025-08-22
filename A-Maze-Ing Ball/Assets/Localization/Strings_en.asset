@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Strings_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d5f8acaa2c9234a01b8545085cd75ac1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20630724608
+    m_Localized: '<color=green>Objective:</color>
+
+      Guide the AMAZEING BALL
+      through the MAZE to the FINISH LINE as fast as possible, collecting as many
+      stars as you can along the way. Complete all the levels to beat the game!
+
+
+
+      <sprite
+      index=5> <sprite index=0> Use the <color=green>LEFT/RIGHT ARROWKEYS</color>
+
+      <sprite
+      index=8> <sprite index=8><sprite index=8> to rotate the maze.
+
+
+
+      The
+      <color=green>FINISH TILES</color> will initially be locked. You''ll need to
+      collect the <color=yellow>yellow key</color> to unlock them.
+
+
+      <sprite
+      index=1> Collect <color=yellow>YELLOW STARS</color> scattered
+
+      <sprite
+      index=8> around the maze.
+
+
+      <sprite index=2> Avoid <color=red>RED STARS</color>
+      -- collecting
+
+      <sprite index=8> one will make you lose a star.
+
+      <sprite
+      index=8> If you collect one without any stars,
+
+      <sprite index=8> the
+      level fails.
+
+
+      <sprite index=3> <color=#15C4FF>TELEPORTERS</color> will
+      teleport the
+
+      <sprite index=8> ball onto its pair with the same color.
+
+
+      <sprite
+      index=4> However, some of them may be locked Find the <color=#15C4FF>
+
+      <sprite
+      index=8> key</color> with corresponding color to
+
+      <sprite index=8> unlock
+      them.
+
+
+      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
+
+      <sprite
+      index=8> as dropping the ball out of the maze
+
+      <sprite index=8> will
+      fail the level.
+
+'
+    m_Metadata:
+      m_Items:
+      - rid: 8044773038083014681
+  - m_Id: 536098103296
+    m_Localized: '<color=green>Objective:</color>
+
+      Guide the AMAZEING BALL
+      through the MAZE to the FINISH LINE as fast as possible, collecting as many
+      stars as you can along the way. Complete all the levels to beat the game!
+
+
+
+      <sprite
+      index=7> <sprite index=0> Tap the <color=green>LEFT/RIGHT SIDES</color>
+
+      <sprite
+      index=8> <sprite index=8><sprite index=8> of the screen to rotate the maze.
+
+
+
+      The
+      <color=green>FINISH TILES</color> will initially be locked. You''ll need to
+      collect the <color=yellow>yellow key</color> to unlock them.
+
+
+      <sprite
+      index=1> Collect <color=yellow>YELLOW STARS</color> scattered
+
+      <sprite
+      index=8> around the maze.
+
+
+      <sprite index=2> Avoid <color=red>RED STARS</color>
+      -- collecting
+
+      <sprite index=8> one will make you lose a star.
+
+      <sprite
+      index=8> If you collect one without any stars,
+
+      <sprite index=8> the
+      level fails.
+
+
+      <sprite index=3> <color=#15C4FF>TELEPORTERS</color> will
+      teleport the
+
+      <sprite index=8> ball onto its pair with the same color.
+
+
+      <sprite
+      index=4> However, some of them may be locked Find the <color=#15C4FF>
+
+      <sprite
+      index=8> key</color> with corresponding color to
+
+      <sprite index=8> unlock
+      them.
+
+
+      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
+
+      <sprite
+      index=8> as dropping the ball out of the maze
+
+      <sprite index=8> will
+      fail the level.
+
+'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8044773038083014681
+      type: {class: PlatformOverride, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_PlatformOverrides:
+        - platform: 11
+          entryOverrideType: 2
+          tableReference:
+            m_TableCollectionName: GUID:d5f8acaa2c9234a01b8545085cd75ac1
+          tableEntryReference:
+            m_KeyId: 536098103296
+            m_Key: 

@@ -78,6 +78,11 @@ MonoBehaviour:
     m_GlyphIndex: 7
     m_Scale: 1
     m_Name: instructions_7
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 8
+    m_Scale: 1
+    m_Name: instructions_7
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -194,16 +199,16 @@ MonoBehaviour:
   - m_Index: 7
     m_Metrics:
       m_Width: 409.59998
-      m_Height: 409.5
-      m_HorizontalBearingX: -204.79999
-      m_HorizontalBearingY: 204.75
+      m_Height: 419.9
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 163
       m_HorizontalAdvance: 409.59998
     m_GlyphRect:
       m_X: 819
       m_Y: 0
       m_Width: 409
       m_Height: 409
-    m_Scale: 4
+    m_Scale: 7.7
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: -1973657774550944927, guid: 4c0993cdd50c24f3fbb2bee134168ff1, type: 3}
@@ -215,7 +220,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 204.75
       m_HorizontalAdvance: 409.59998
     m_GlyphRect:
-      m_X: 819
+      m_X: 1254
       m_Y: 0
       m_Width: 409
       m_Height: 409
