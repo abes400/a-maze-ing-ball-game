@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Base"))
+        if (collision.CompareTag("Base") && !GameManager.finished)
             GameManager.FailLevel();
     }
 }
