@@ -397,6 +397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1481869260391484041, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
+      propertyPath: levelCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1887067685140286370, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
