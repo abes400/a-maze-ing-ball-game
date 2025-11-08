@@ -1,5 +1,5 @@
-# Amazeing Ball
-
+![Logo of the Game](./Readme_Assets/logo.bmp)
+#### Distributed under MIT License
 <hr>
 
 ### Introduction
