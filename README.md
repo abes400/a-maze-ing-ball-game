@@ -1,4 +1,4 @@
-![Logo of the Game](./Readme_Assets/logo.bmp)
+![Logo of the Game](./Readme_Assets/logo.png)
 #### Distributed under MIT License
 <hr>
 
