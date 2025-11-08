@@ -15,3 +15,6 @@
 <hr>
 
 ### Screenshots
+![Main Menu](./Readme_Assets/menu.png)
+![Level 5](./Readme_Assets/lvl5.png)
+![Level 7](./Readme_Assets/lvl7.png)
