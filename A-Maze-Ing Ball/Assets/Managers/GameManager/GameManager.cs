@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static Action<int> UpdateStars;
     public static Action<bool> Finish;
-    public static Action Fail;
-    public static Action TogglePause;
+    public static Action Fail, TogglePause, RestartKey;
 
 
     private void Start()
@@ -30,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Escape) && !finished && !loading)
         {
             if (isPlaying) PauseLevel(); else Unpause();
@@ -37,6 +37,21 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Backspace) && !finished)
         {
             FailLevel();
+        }
+        */
+        
+        if(!loading) // In-game
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !finished)
+                if(isPlaying) PauseLevel();
+                else Unpause();
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                isPlaying = false;
+                Time.timeScale = 0;
+                RestartKey?.Invoke();
+            }
+            else if (Input.GetKeyDown(KeyCode.Backspace)) FailLevel(); // For debug only, delete when game finishes
         }
     }
 

@@ -17,10 +17,15 @@ public class Menus : MonoBehaviour
     [SerializeField] GameObject failMenu;
     [SerializeField] GameObject banner;
     [SerializeField] GameObject loadingTitle;
+
+    bool restartedWithKey = false;
+
     private void OnEnable()
     {
+        restartedWithKey = false;
         GameManager.TogglePause += OnGamePause;
-        GameManager.Finish += OnFinishLevel;
+        GameManager.Finish      += OnFinishLevel;
+        GameManager.RestartKey  += OnRestartKey;
         #if UNITY_ANDROID || UNITY_IOS
         Instantiate(mobileAddonPrefab, transform);
         #endif
@@ -29,7 +34,8 @@ public class Menus : MonoBehaviour
     private void OnDisable()
     {
         GameManager.TogglePause -= OnGamePause;
-        GameManager.Finish -= OnFinishLevel;
+        GameManager.Finish      -= OnFinishLevel;
+        GameManager.RestartKey  -= OnRestartKey;
     }
 
     private void OnGamePause()
@@ -41,6 +47,14 @@ public class Menus : MonoBehaviour
     }
 
     private void OnFinishLevel(bool succeeded) => StartCoroutine(FinishSceneWithDelay(succeeded));
+
+    private void OnRestartKey()
+    {
+        restartedWithKey = true;
+        SetCursorLocked(true);
+        banner.SetActive(true);
+        Restart();
+    }
     private IEnumerator FinishSceneWithDelay(bool succeeded)
     {
         yield return new WaitForSecondsRealtime(loadDelay);
@@ -50,7 +64,9 @@ public class Menus : MonoBehaviour
         banner.SetActive(true);
         if (succeeded) finishMenu.SetActive(true);
         else failMenu.SetActive(true);
-        SetCursorLocked(false);
+
+        // I know it's a STUPID fix, but I just want to be on the safe side .d
+        if(!restartedWithKey) SetCursorLocked(false);
     }
 
     public void Continue()
