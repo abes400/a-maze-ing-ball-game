@@ -21,14 +21,14 @@ MonoBehaviour:
   - m_Id: 20630724608
     m_Localized: '<color=green>Objective:</color>
 
-      Guide the AMAZEING BALL
-      through the MAZE to the FINISH LINE as fast as possible, collecting as many
-      stars as you can along the way. Complete all the levels to beat the game!
+      Guide the ball to the finish
+      points in different mazes as fast as possible. Collect as many stars as you
+      can. Complete all the levels to beat the game.
 
 
 
-      <sprite
-      index=5> <sprite index=0> Use the <color=green>LEFT/RIGHT ARROWKEYS</color>
+      <sprite index=5> <sprite
+      index=0> Use the <color=green>LEFT/RIGHT ARROW KEYS</color>
 
       <sprite
       index=8> <sprite index=8><sprite index=8> to rotate the maze.
@@ -39,46 +39,46 @@ MonoBehaviour:
 
 
       The <color=green>FINISH
-      TILES</color> will initially be locked. You''ll need to collect the <color=yellow>yellow
+      POINTS</color> will initially be locked. You''ll need to collect the <color=yellow>yellow
       key</color> to unlock them.
 
 
-      <sprite index=1> Collect <color=yellow>YELLOW
+      <sprite index=1> Collect the <color=yellow>YELLOW
       STARS</color> scattered
 
       <sprite index=8> around the maze.
 
 
       <sprite
-      index=2> Avoid <color=red>RED STARS</color> -- collecting
+      index=2> Avoid the <color=red>RED STARS</color> as
 
       <sprite index=8>
-      one will make you lose a star.
+      collecting one will make you lose one star.
 
-      <sprite index=8> If you collect one without
-      any stars,
+      <sprite index=8> If you
+      collect one without any stars,
 
       <sprite index=8> the level fails.
 
 
-      <sprite index=3>
-      <color=#15C4FF>TELEPORTERS</color> will teleport the
-
-      <sprite index=8>
-      ball onto its pair with the same color.
-
-
-      <sprite index=4> However, some
-      of them may be locked Find the <color=#15C4FF>
-
-      <sprite index=8> key</color>
-      with corresponding color to
-
-      <sprite index=8> unlock them.
-
+      <sprite
+      index=3> <color=#15C4FF>TELEPORT POINTS</color> will teleport the
 
       <sprite
-      index=6> Also watch out for the <color=red>PITFALLS</color>
+      index=8> ball onto their pairs with the same color.
+
+
+      <sprite index=4>
+      However, some of them may be locked. Find <color=#15C4FF>
+
+      <sprite index=8>
+      their keys</color> with their corresponding colors
+
+      <sprite index=8>
+      to unlock them.
+
+
+      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
 
       <sprite
       index=8> as dropping the ball out of the maze
@@ -93,36 +93,36 @@ MonoBehaviour:
   - m_Id: 536098103296
     m_Localized: '<color=green>Objective:</color>
 
-      Guide the AMAZEING BALL
-      through the MAZE to the FINISH LINE as fast as possible, collecting as many
-      stars as you can along the way. Complete all the levels to beat the game!
+      Guide the ball to the finish
+      points in different mazes as fast as possible. Collect as many stars as you
+      can. Complete all the levels to beat the game.
 
 
 
-      <sprite
-      index=7> <sprite index=0> Tap the <color=green>LEFT/RIGHT SIDES</color>
+      <sprite index=7> <sprite
+      index=0> Tap the <color=green>LEFT/RIGHT SIDES</color>
 
-      <sprite
-      index=8> <sprite index=8><sprite index=8> of the screen to rotate the maze.
+      <sprite index=8>
+      <sprite index=8><sprite index=8> of the screen to rotate the maze.
 
 
 
       The
-      <color=green>FINISH TILES</color> will initially be locked. You''ll need to
+      <color=green>FINISH POINTS</color> will initially be locked. You''ll need to
       collect the <color=yellow>yellow key</color> to unlock them.
 
 
       <sprite
-      index=1> Collect <color=yellow>YELLOW STARS</color> scattered
+      index=1> Collect the <color=yellow>YELLOW STARS</color> scattered
 
       <sprite
       index=8> around the maze.
 
 
-      <sprite index=2> Avoid <color=red>RED STARS</color>
-      -- collecting
+      <sprite index=2> Avoid the <color=red>RED
+      STARS</color>
 
-      <sprite index=8> one will make you lose a star.
+      <sprite index=8> Collecting one will make you lose a star.
 
       <sprite
       index=8> If you collect one without any stars,
@@ -131,29 +131,29 @@ MonoBehaviour:
       level fails.
 
 
-      <sprite index=3> <color=#15C4FF>TELEPORTERS</color> will
-      teleport the
+      <sprite index=3> <color=#15C4FF>TELEPORT POINTS</color>
+      will teleport the
 
-      <sprite index=8> ball onto its pair with the same color.
-
-
-      <sprite
-      index=4> However, some of them may be locked Find the <color=#15C4FF>
-
-      <sprite
-      index=8> key</color> with corresponding color to
-
-      <sprite index=8> unlock
-      them.
+      <sprite index=8> ball onto their pairs with the same
+      color.
 
 
-      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
+      <sprite index=4> However, some of them may be locked. Find the
+      <color=#15C4FF>
 
-      <sprite
-      index=8> as dropping the ball out of the maze
+      <sprite index=8> key</color> with corresponding color
+      to
 
-      <sprite index=8> will
-      fail the level.
+      <sprite index=8> unlock them.
+
+
+      <sprite index=6> Also watch
+      out for the <color=red>PITFALLS</color>
+
+      <sprite index=8> as dropping
+      the ball out of the maze
+
+      <sprite index=8> will fail the level.
 
 '
     m_Metadata:
