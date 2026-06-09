@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490791201381634622, guid: a64982bfb5f1a47f7b5693f6ebe1efed, type: 3}
       propertyPath: m_text
-      value: "CREDITS\n\nArtwork, Programming & Level Design\nI.K. Bilir (Abes400)\n\nConcept
+      value: "Artwork, Programming & Level Design\nI.K. Bilir (Abes400)\n\nConcept
         Based On\nGravity Ball\u2122 by LG R&D Lab, Russia\n\nMade with Unity\xAE\nSound
         Effects obtained from ZapSplat.com\n\n\xA9 2025 FLYING MAP ENTERTAINMENT
         by Abes400\nDistributed under MIT License\n<align=\"justified\">\nPermission
@@ -451,7 +451,7 @@ PrefabInstance:
         software and associated documentation files (the \"Software\"), to deal in
         the Software without restriction, including without limitation the rights
         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-        copies of the Software, and to permit persons to whom the Software is\nfurnished
+        copies of the Software, and to permit persons to whom the Software is furnished
         to do so, subject to the following conditions:\n\nThe above copyright notice
         and this permission notice shall be included in all copies or substantial
         portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT

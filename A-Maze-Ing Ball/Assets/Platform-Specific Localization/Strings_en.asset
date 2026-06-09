@@ -50,35 +50,36 @@ MonoBehaviour:
 
 
       <sprite
-      index=2> Avoid the <color=red>RED STARS</color> as
+      index=2> Avoid the <color=red>RED STARS</color> as collecting one
 
-      <sprite index=8>
-      collecting one will make you lose one star.
+      <sprite
+      index=8> will make you lose one star.
 
-      <sprite index=8> If you
-      collect one without any stars,
+      <sprite index=8> If you collect
+      them without any stars,
 
       <sprite index=8> the level fails.
 
 
       <sprite
-      index=3> <color=#15C4FF>TELEPORT POINTS</color> will teleport the
+      index=3> <color=#15C4FF>TELEPORT POINTS</color> will teleport the ball.
 
       <sprite
-      index=8> ball onto their pairs with the same color.
+      index=8> (Duh!)
 
 
-      <sprite index=4>
-      However, some of them may be locked. Find <color=#15C4FF>
 
-      <sprite index=8>
-      their keys</color> with their corresponding colors
+      <sprite index=4> However, some of them may be locked.
+      Find <color=#15C4FF>
 
-      <sprite index=8>
-      to unlock them.
+      <sprite index=8> their keys</color> with their
+      corresponding colors
+
+      <sprite index=8> to unlock them.
 
 
-      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
+      <sprite
+      index=6> Also watch out for the <color=red>PITFALLS</color>
 
       <sprite
       index=8> as dropping the ball out of the maze
@@ -106,7 +107,6 @@ MonoBehaviour:
       <sprite index=8><sprite index=8> of the screen to rotate the maze.
 
 
-
       The
       <color=green>FINISH POINTS</color> will initially be locked. You''ll need to
       collect the <color=yellow>yellow key</color> to unlock them.
@@ -120,40 +120,41 @@ MonoBehaviour:
 
 
       <sprite index=2> Avoid the <color=red>RED
-      STARS</color>
+      STARS</color> as collecting one
 
-      <sprite index=8> Collecting one will make you lose a star.
+      <sprite index=8> will make you lose
+      one star.
+
+      <sprite index=8> If you collect them without any stars,
 
       <sprite
-      index=8> If you collect one without any stars,
-
-      <sprite index=8> the
-      level fails.
+      index=8> the level fails.
 
 
-      <sprite index=3> <color=#15C4FF>TELEPORT POINTS</color>
-      will teleport the
+      <sprite index=3> <color=#15C4FF>TELEPORT
+      POINTS</color> will teleport the ball.
 
-      <sprite index=8> ball onto their pairs with the same
-      color.
-
-
-      <sprite index=4> However, some of them may be locked. Find the
-      <color=#15C4FF>
-
-      <sprite index=8> key</color> with corresponding color
-      to
-
-      <sprite index=8> unlock them.
+      <sprite index=8> (Duh!)
 
 
-      <sprite index=6> Also watch
-      out for the <color=red>PITFALLS</color>
 
-      <sprite index=8> as dropping
-      the ball out of the maze
+      <sprite
+      index=4> However, some of them may be locked. Find <color=#15C4FF>
 
-      <sprite index=8> will fail the level.
+      <sprite
+      index=8> their keys</color> with their corresponding colors
+
+      <sprite
+      index=8> to unlock them.
+
+
+      <sprite index=6> Also watch out for the <color=red>PITFALLS</color>
+
+      <sprite
+      index=8> as dropping the ball out of the maze
+
+      <sprite index=8> will
+      fail the level.
 
 '
     m_Metadata:
