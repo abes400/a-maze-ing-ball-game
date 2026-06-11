@@ -9,7 +9,7 @@ public class TitleMenus : MonoBehaviour
     [SerializeField] int levelCount;
     [SerializeField] float loadDelay = 0.5f;
 
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
 
     [Header("-----    UI Elements    -----")]
     [SerializeField] GameObject logoBase;

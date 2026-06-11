@@ -6,7 +6,7 @@ public class FinishStat : MonoBehaviour
 {
     [SerializeField] Sprite[] starSprites;
     
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] TextMeshProUGUI timeStat;
 
     private void Start()

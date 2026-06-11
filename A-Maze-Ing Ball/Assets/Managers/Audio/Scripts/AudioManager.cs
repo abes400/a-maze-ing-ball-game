@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip BGM;
     [SerializeField] AudioClip[] audios;
 
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 

@@ -6,7 +6,7 @@ public class LevelButton : MonoBehaviour
 {
     [SerializeField] Sprite[] starSprites;
     
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI lockedText;
     [SerializeField] TextMeshProUGUI timeText;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MobileAdditions : MonoBehaviour
 {
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] GameObject pauseButton;
 
     public void Pause() => GameManager.PauseLevel();

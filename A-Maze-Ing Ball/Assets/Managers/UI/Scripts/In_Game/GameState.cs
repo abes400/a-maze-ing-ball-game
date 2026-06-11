@@ -6,7 +6,7 @@ public class GameState : MonoBehaviour
 {
     public static float timeElapsed;
 
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] Sprite[] starSprites;
     [SerializeField] Image starSpriteImage;
     public TextMeshProUGUI time;

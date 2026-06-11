@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Options : MonoBehaviour
 {
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] GameObject fullScreenButton;
     TextMeshProUGUI buttonText;
 

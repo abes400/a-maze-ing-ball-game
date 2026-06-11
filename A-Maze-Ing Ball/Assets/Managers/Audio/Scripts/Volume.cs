@@ -6,7 +6,7 @@ public class Volume : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
 
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [Header("-----    Sliders    -----")]
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] private GameObject enabledLight;
     private bool activated = false;
 

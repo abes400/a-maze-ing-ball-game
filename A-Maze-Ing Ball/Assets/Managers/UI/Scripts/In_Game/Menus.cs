@@ -8,7 +8,7 @@ public class Menus : MonoBehaviour
     [SerializeField] float loadDelay = 0.5f;
     // Start is called before the first frame update
 
-    [Header("-----    Child GameObjects (DONT'T TOUCH)    -----")]
+    [Header("-----    Child GameObjects (DON'T TOUCH)    -----")]
     [SerializeField] GameObject mobileAddonPrefab;
 
     [Header("-----    Menu Objects    -----")]
