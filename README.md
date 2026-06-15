@@ -72,7 +72,7 @@ Repo_Directory\
 - #### Building Installer for Windows
     - Open **NSIS**
     - Select **Compile NSI scripts**
-    - Drag & drop the **[Windows Installer Script](./project/appres/win/windows_installer.nsi)** to the ***MakeNSISW*** window.
+    - Drag & drop the **[Windows Installer Script](./Repo_Assets/win_wiz/windows_installer.nsi)** to the ***MakeNSISW*** window.
     - On success, you should see the ***Installer executable*** at `Repo_Directory\abl_dist\`.
 
 <br>
