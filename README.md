@@ -1,4 +1,4 @@
-![Logo of the Game](./Readme_Assets/logo.png)
+![Logo of the Game](./Repo_Assets/logo.png)
 #### Distributed under MIT License
 <hr>
 
@@ -15,6 +15,14 @@
 <hr>
 
 ### Screenshots
-![Main Menu](./Readme_Assets/menu.png)
-![Level 5](./Readme_Assets/lvl5.png)
-![Level 7](./Readme_Assets/lvl7.png)
+
+<hr>
+
+| | |
+| - | - |
+|![Main Menu](./Repo_Assets/menu.png)|![Level 5](./Repo_Assets/lvl5.png)|
+|![Level 7](./Repo_Assets/lvl7.png)|![Level 11](./Repo_Assets/lvl11.png)|
+<hr>
+
+
+
