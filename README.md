@@ -1,8 +1,12 @@
 ![Logo of the Game](./Repo_Assets/logo.png)
 
 <b>A simple strategy game where the player guides a ball through a rotatable maze.</b>
-Made with Unity.
+
+Made with Unity&#174;.\
 Distributed under MIT License.
+
+**[Jump to Build Instructions](#build-instructions)**  
+**[Jump to Building Installers](#building-installers)**
 
 <hr>
 
@@ -11,8 +15,7 @@ Distributed under MIT License.
 |![Main Menu](./Repo_Assets/menu.png)|![Level 5](./Repo_Assets/lvl5.png)|
 |![Level 7](./Repo_Assets/lvl7.png)|![Level 11](./Repo_Assets/lvl11.png)|
 
-
-
+<hr>
 
 ## About the Game
 Guide the ball to the finish points in different mazes as fast as possible. Collect as many stars as you can. Complete all the levels to beat the game.
@@ -28,13 +31,13 @@ Guide the ball to the finish points in different mazes as fast as possible. Coll
 <br>
 
 ## Credits
-- Artwork, Programming, and Level Design - Abes400
-- Concept based on Gravity Ball™ by LG R&D Lab, Russia
-- Sound effects obtained from zapsplat.com
+- Artwork, Programming, and Level Design - **Abes400**
+- Concept based on **Gravity Ball&trade;** by **LG R&D Lab, Russia**.
+- Sound effects obtained from **[Zapsplat](https://www.zapsplat.com)**.
 
 <br>
 
-## Building the App
+## Build Instructions
 **NOTE**: From now on, the toppermost directory of this repository will be referred to as the ***Repo Directory***. As you clone this repository, this directory will probably be named as **a-maze-ing-ball-game**. The sub contents of **Repo Directory** should be as follows:
 
 ```
@@ -47,7 +50,7 @@ Repo_Directory\
 └─ README.md
 ```
 
-**NOTE**: It is **highly** recommended to save the **built application folder / bundle** on a directory named `abl_dist`, created in `Repo_Directory`. The installer building scripts will highly rely on it. After building, the directory tree should be as follows:
+**NOTE**: It is **highly** recommended to save the **built application folder/bundle** on a directory named `abl_dist`, created in `Repo_Directory`. The installer building scripts will highly rely on it. After building, the directory tree should be as follows:
 
 ```
 Repo_Directory\
@@ -61,7 +64,7 @@ Repo_Directory\
 ├─ Makefile
 └─ README.md
 ```
-
+## Building Installers
 ### Windows (x64)
 - #### Prerequisites for Windows
     - **NullSoft Scriptable Install System (NSIS)** -- *[Download From Here](https://nsis.sourceforge.io/Download)*
