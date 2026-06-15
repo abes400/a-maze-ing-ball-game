@@ -1,20 +1,8 @@
 ![Logo of the Game](./Repo_Assets/logo.png)
-#### Distributed under MIT License
-<hr>
 
-### Introduction
-<b>Amazeing Ball</b> is a simple <b>strategy game</b> where the player guides a ball through a <b>rotatable maze</b>. The main objective is to escort the ball to the <b>finish point</b> as fast as possible while collecting <b>stars</b> along the way. All levels need to be complete to beat the game.
-
-<hr>
-
-#### Controls
-- <b>Arrow keys: </b> Rotate the maze
-- <b>Esc: </b> Pause/Resume
-- <b>Mouse: </b> Navigation through the menus
-
-<hr>
-
-### Screenshots
+<b>A simple strategy game where the player guides a ball through a rotatable maze.</b>
+Made with Unity.
+Distributed under MIT License.
 
 <hr>
 
@@ -22,7 +10,97 @@
 | - | - |
 |![Main Menu](./Repo_Assets/menu.png)|![Level 5](./Repo_Assets/lvl5.png)|
 |![Level 7](./Repo_Assets/lvl7.png)|![Level 11](./Repo_Assets/lvl11.png)|
-<hr>
 
 
 
+
+## About the Game
+Guide the ball to the finish points in different mazes as fast as possible. Collect as many stars as you can. Complete all the levels to beat the game.
+
+
+### Controls
+- **Arrow keys:** Rotate the maze
+- **Esc:** Pause/Resume
+- **R:** Restart the level
+- **Mouse:** Navigation through the menus
+
+
+<br>
+
+## Credits
+- Artwork, Programming, and Level Design - Abes400
+- Concept based on Gravity Ball™ by LG R&D Lab, Russia
+- Sound effects obtained from zapsplat.com
+
+<br>
+
+## Building the App
+**NOTE**: From now on, the toppermost directory of this repository will be referred to as the ***Repo Directory***. As you clone this repository, this directory will probably be named as **a-maze-ing-ball-game**. The sub contents of **Repo Directory** should be as follows:
+
+```
+Repo_Directory\
+├─ A-Maze-Ing Ball\
+├─ Repo_Assets\
+├─ .gitignore
+├─ LICENSE
+├─ Makefile
+└─ README.md
+```
+
+**NOTE**: It is **highly** recommended to save the **built application folder / bundle** on a directory named `abl_dist`, created in `Repo_Directory`. The installer building scripts will highly rely on it. After building, the directory tree should be as follows:
+
+```
+Repo_Directory\
+├─ A-Maze-Ing Ball\
+├─ abl_dist\
+│   ├─ Amazeing Ball.app\ (If built for Mac)
+│   └─ Amazeing Ball\ (Contains the Windows .exe)
+├─ Repo_Assets\
+├─ .gitignore
+├─ LICENSE
+├─ Makefile
+└─ README.md
+```
+
+### Windows (x64)
+- #### Prerequisites for Windows
+    - **NullSoft Scriptable Install System (NSIS)** -- *[Download From Here](https://nsis.sourceforge.io/Download)*
+
+- #### Building Installer for Windows
+    - Open **NSIS**
+    - Select **Compile NSI scripts**
+    - Drag & drop the **[Windows Installer Script](./project/appres/win/windows_installer.nsi)** to the ***MakeNSISW*** window.
+    - On success, you should see the ***Installer executable*** at `Repo_Directory\abl_dist\`.
+
+<br>
+
+### macOS (Universal)
+- #### Prerequisites for macOS
+    - **create-dmg Command Line Tool**  -- *Run `brew install create-dmg` on **Terminal** if not installed (Homebrew required)*
+
+- #### Building Installer for macOS
+    On Terminal:
+    ```
+    # Go to the Repo Directory
+    cd /path/to/the/Repo_Directory
+
+    # If you have 'Make' installed:
+    make dmg
+
+    # If you don't have 'Make' installed:
+    create-dmg \
+    --volname "Install Amazeing Ball 1.0" \
+    --volicon "Repo_Assets/mac_dmg/install_mac.icns" \
+    --background "Repo_Assets/mac_dmg/dmgbg.png" \
+    --window-pos 200 120 \
+    --window-size 540 380 \
+    --icon-size 80 \
+    --icon "Amazeing Ball.app" 150 250 \
+    --hide-extension "Amazeing Ball.app" \
+    --app-drop-link 380 250 \
+    "./abl_dist/Install_Amazeing_Ball_1.0.dmg" \
+    "./abl_dist/Amazeing Ball.app"
+    ```
+    On success, you should see the **Installer Disk Image** at `Repo_Directory/abl_dist/`.
+
+<br>
